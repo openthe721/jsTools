@@ -43,6 +43,31 @@
     var param = { rootId:6, parent:'pId' };//哪个不匹配就配置哪个
     var res2 = toJsonTree(oData2,param);
     console.log('res2', res2);
+
+    /*
+    非插件直接调用，匹配对应参数即可
+    var dataObj = {};
+    var jsonTree = null;
+    oData.forEach(function (item) {
+      if (item.id==0) {
+        dataObj.branch = [];
+        dataObj.branch.push(item);
+        drawTree(dataObj.branch);
+      };
+    });
+    function drawTree(arr) {
+      arr.forEach(function (item1) {
+        item1.branch = [];
+        oData.forEach(function (item2) {
+          if (item2.id!=0 && item1.id==item2.parentId) {
+            item1.branch.push(item2);
+            drawTree(item1.branch);
+          }
+        });
+      });
+    }
+    jsonTree = dataObj['branch'][0];
+    */
   </script>
 </body>
 </html>
